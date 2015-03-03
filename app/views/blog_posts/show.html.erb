@@ -4,8 +4,8 @@
   <h1>
   <%= @blog_post.title %></h1>
 </p>
-
-<h2><%= @blog_post.author %></h2>
+<div class="panel-body">
+by <strong><%= @blog_post.author %></strong> 
 
 <p>on <%= @blog_post.created_at.strftime("%B %d, %Y") %></p>
   <p>
