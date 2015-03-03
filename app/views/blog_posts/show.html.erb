@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1>
+  <%= @blog_post.title %></h1>
+</p>
+
+<h2><%= @blog_post.author %></h2>
+
+<p>on <%= @blog_post.created_at.strftime("%B %d, %Y") %></p>
+  <p>
+  <%= @blog_post.blog_entry %>
+</p>
+<p>
+<%= link_to 'Edit', edit_blog_post_path(@blog_post) %>
+
+</p>
+</div>
+
+<%= link_to 'Back', blog_posts_path %>
+
+
+
+
+
+
+<h4>Comments<h4>
+    <%@blog_post.comments.each do |comment| %>
+    <p><strong><%= comment.author %><strong> said: </p>
+    <p><%= comment.comment_entry %></p>    <% end %> 
