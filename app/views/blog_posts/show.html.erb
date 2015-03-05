@@ -1,11 +1,11 @@
+<h1>Current Blog Posts</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h1>
-  <%= @blog_post.title %></h1>
+  
 </p>
 <div class="panel-body">
-by <strong><%= @blog_post.author %></strong> 
+by <strong><%= @blog_post.user.email %></strong> 
 
 <p>on <%= @blog_post.created_at.strftime("%B %d, %Y") %></p>
   <p>
@@ -26,5 +26,11 @@ by <strong><%= @blog_post.author %></strong>
 
 <h4>Comments<h4>
     <%@blog_post.comments.each do |comment| %>
-    <p><strong><%= comment.author %><strong> said: </p>
-    <p><%= comment.comment_entry %></p>    <% end %> 
+    <div class="panel panel-success">
+    	<div class="panel-body">
+ <p><strong><%= comment.user.email %><strong> said: </p>
+    <p><strong><%= comment.user.email %></p><    
+
+
+
+    <% end %> 
